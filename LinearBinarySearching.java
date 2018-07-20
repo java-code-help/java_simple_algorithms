@@ -2,6 +2,8 @@ package com.company;
 
 import java.math.BigInteger;
 
+
+//complexity: O(n)
 public class LinearBinarySearching {
     static void linearSearch(int[] arr, int target){
         int result = Integer.MAX_VALUE;
@@ -15,6 +17,8 @@ public class LinearBinarySearching {
         System.out.println("no value found");
 //        return -1;
     }
+    
+    //Complexity: O(log n)
     static int binarySearch(int arr[], int x){
         int low = 0;
         int high = arr.length-1;
