@@ -51,3 +51,7 @@ class TestSynchronization1{
 
     }
 }
+
+
+
+//very useful informations about synch here: https://howtodoinjava.com/core-java/multi-threading/thread-synchronization-object-level-locking-and-class-level-locking/
