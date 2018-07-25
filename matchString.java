@@ -1,5 +1,5 @@
 static String[] guessIt(String message, String[] options) {
-            ArrayList<String> resultString = new ArrayList<>();
+        ArrayList<String> resultString = new ArrayList<>();
         String[] finalString;
         for (int i=0;i<options.length;i++){
             if (options[i].startsWith(message)){
