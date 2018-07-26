@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class matchString{
 static String[] guessIt(String message, String[] options) {
         ArrayList<String> resultString = new ArrayList<>();
