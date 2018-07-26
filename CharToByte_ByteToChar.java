@@ -1,3 +1,4 @@
+public class CharToByte_ByteToChar{    
 static void charToByte_ASCII(String str) {
         char[] buffer = str.toCharArray();
         byte[] b = new byte[buffer.length];
@@ -20,6 +21,7 @@ public static void main(String[] args) {
         int[] ascii_chars = {65,66,67};
         ASCIItoChar(ascii_chars);
         stringToBytesASCII(letters);
+ }
 }
 
 //output
