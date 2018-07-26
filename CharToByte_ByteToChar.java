@@ -1,4 +1,4 @@
-static void stringToBytesASCII(String str) {
+static void charToByte_ASCII(String str) {
         char[] buffer = str.toCharArray();
         byte[] b = new byte[buffer.length];
         for (int i = 0; i < b.length; i++) {
@@ -7,7 +7,7 @@ static void stringToBytesASCII(String str) {
         String result = Arrays.toString(b);
         System.out.println(result);
     }
-    static void ASCIItoChar(int[] ints){
+    static void byteToChar_ASCII(int[] ints){
         char[] chars = new char[ints.length];
         for (int i=0;i<ints.length;i++){
             chars[i] = (char)ints[i];
