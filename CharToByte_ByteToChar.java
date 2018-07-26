@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class CharToByte_ByteToChar{    
 static void charToByte_ASCII(String str) {
         char[] buffer = str.toCharArray();
