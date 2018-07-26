@@ -1,3 +1,4 @@
+public class matchString{
 static String[] guessIt(String message, String[] options) {
         ArrayList<String> resultString = new ArrayList<>();
         String[] finalString;
@@ -22,3 +23,4 @@ static String[] guessIt(String message, String[] options) {
 
         System.out.println(Arrays.toString(res));
     }
+}
