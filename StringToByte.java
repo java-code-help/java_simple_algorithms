@@ -1,8 +1,27 @@
-public static byte[] stringToBytesASCII(String str) {
- char[] buffer = str.toCharArray();
- byte[] b = new byte[buffer.length];
- for (int i = 0; i < b.length; i++) {
-  b[i] = (byte) buffer[i];
- }
- return b;
+static void stringToBytesASCII(String str) {
+        char[] buffer = str.toCharArray();
+        byte[] b = new byte[buffer.length];
+        for (int i = 0; i < b.length; i++) {
+            b[i] = (byte) buffer[i];
+        }
+        String result = Arrays.toString(b);
+        System.out.println(result);
+    }
+    static void ASCIItoChar(int[] ints){
+        char[] chars = new char[ints.length];
+        for (int i=0;i<ints.length;i++){
+            chars[i] = (char)ints[i];
+        }
+        System.out.println(Arrays.toString(chars));
+    }
+
+public static void main(String[] args) {
+        String letters = "ABC";
+        int[] ascii_chars = {65,66,67};
+        ASCIItoChar(ascii_chars);
+        stringToBytesASCII(letters);
 }
+
+//output
+//[A, B, C]
+//[65, 66, 67]
