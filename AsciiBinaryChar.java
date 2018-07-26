@@ -1,6 +1,10 @@
-char T = (char)Integer.valueOf("01010100", 2).intValue();
-char A = (char)Integer.valueOf("01000001", 2).intValue();
 
+char A = (char)Integer.valueOf("01000001", 2).intValue();
+char B = (char)Integer.valueOf("01000010", 2).intValue();
+char C = (char)Integer.valueOf("01000011", 2).intValue();
+
+//...
+char T = (char)Integer.valueOf("01010100", 2).intValue();
 
 // ASCII TABLE:
 // Dec Hex	Binary	Character Description
