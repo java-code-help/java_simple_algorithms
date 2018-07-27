@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CharToByte_ByteToChar{    
+        
 static void charToByte_ASCII(String str) {
         char[] buffer = str.toCharArray();
         byte[] b = new byte[buffer.length];
@@ -17,6 +18,14 @@ static void charToByte_ASCII(String str) {
             chars[i] = (char)ints[i];
         }
         System.out.println(Arrays.toString(chars));
+    }
+        
+        static void charToByte2(char[] chars){
+        byte[] bytes = new byte[chars.length];
+        for (int i =0;i<bytes.length;i++){
+            bytes[i]=(byte) chars[i];
+        }
+        System.out.println(Arrays.toString(bytes));
     }
 
 public static void main(String[] args) {
