@@ -2,6 +2,12 @@
 char A = (char)Integer.valueOf("01000001", 2).intValue();
 char B = (char)Integer.valueOf("01000010", 2).intValue();
 char C = (char)Integer.valueOf("01000011", 2).intValue();
+char D = (char)Integer.valueOf("01100100", 2).intValue();
+char E = (char)Integer.valueOf("01100101", 2).intValue();
+char F = (char)Integer.valueOf("01100110", 2).intValue();
+char G = (char)Integer.valueOf("01100111", 2).intValue();
+char H = (char)Integer.valueOf("01101000", 2).intValue();
+char I = (char)Integer.valueOf("01101001", 2).intValue();
 
 //...
 char T = (char)Integer.valueOf("01010100", 2).intValue();
