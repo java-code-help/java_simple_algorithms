@@ -8,6 +8,14 @@ char F = (char)Integer.valueOf("01100110", 2).intValue();
 char G = (char)Integer.valueOf("01100111", 2).intValue();
 char H = (char)Integer.valueOf("01101000", 2).intValue();
 char I = (char)Integer.valueOf("01101001", 2).intValue();
+char J = (char)Integer.valueOf("01101010", 2).intValue();
+char K = (char)Integer.valueOf("01101011", 2).intValue();
+char L = (char)Integer.valueOf("01101100", 2).intValue();
+char M = (char)Integer.valueOf("01101101", 2).intValue();
+char N = (char)Integer.valueOf("01101110", 2).intValue();
+char O = (char)Integer.valueOf("01101111", 2).intValue();
+char P = (char)Integer.valueOf("01110000", 2).intValue();
+
 
 //...
 char T = (char)Integer.valueOf("01010100", 2).intValue();
