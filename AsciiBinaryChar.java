@@ -15,10 +15,15 @@ char M = (char)Integer.valueOf("01101101", 2).intValue();
 char N = (char)Integer.valueOf("01101110", 2).intValue();
 char O = (char)Integer.valueOf("01101111", 2).intValue();
 char P = (char)Integer.valueOf("01110000", 2).intValue();
-
-
-//...
+char R = (char)Integer.valueOf("01010010", 2).intValue();
+char S = (char)Integer.valueOf("01010011", 2).intValue();
 char T = (char)Integer.valueOf("01010100", 2).intValue();
+char U = (char)Integer.valueOf("01010101", 2).intValue();
+char V = (char)Integer.valueOf("01010110", 2).intValue();
+char W = (char)Integer.valueOf("01010111", 2).intValue();
+char X = (char)Integer.valueOf("01011000", 2).intValue();
+char Y = (char)Integer.valueOf("01011001", 2).intValue();
+char Z = (char)Integer.valueOf("01011010", 2).intValue();
 
 // ASCII TABLE:
 // Dec Hex	Binary	Character Description
