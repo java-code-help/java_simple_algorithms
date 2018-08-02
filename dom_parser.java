@@ -23,11 +23,11 @@ public class Main {
             SAXException,
             TransformerException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduceti numarul NOU de telefon: ");
+        System.out.println("Input phone number to replace: ");
         String newNumber = scanner.nextLine();
-        System.out.println("Introduceti pathul catre fisier: ");
+        System.out.println("Input file path: ");
         String path = scanner.nextLine();
-        System.out.println("Introduceti numele fisierului xml: ");
+        System.out.println("Input file name (xml): ");
         String fileName = scanner.nextLine();
         try {
         File sourceXml = new File(path + "\\" + fileName + ".xml");
