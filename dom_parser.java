@@ -2,12 +2,11 @@ package com.company;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
+import java.util.Scanner;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -19,117 +18,61 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, TransformerException {
+    public static void main(String[] args) throws
+            IOException,
+            SAXException,
+            TransformerException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduceti numarul NOU de telefon: ");
+        String newNumber = scanner.nextLine();
+        System.out.println("Introduceti pathul catre fisier: ");
+        String path = scanner.nextLine();
+        System.out.println("Introduceti numele fisierului xml: ");
+        String fileName = scanner.nextLine();
         try {
-        File xmlFile = new File("C:\\Users\\marius.nicolae1\\IntelliJIDEAProjects\\SAXparsingXML\\data\\file.xml");
-        File newXmlFile = new File("C:\\Users\\marius.nicolae1\\IntelliJIDEAProjects\\SAXparsingXML\\data\\newfile.xml");
+        File sourceXml = new File(path + "\\" + fileName + ".xml");
+        File newXmlFile = new File(path + "\\newFile.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document document = dBuilder.parse(xmlFile);
+        Document document = dBuilder.parse(sourceXml);
         document.getDocumentElement().normalize();
         System.out.println("Root element :" + document.getDocumentElement().getNodeName());
-        //NodeList nList = document.getElementsByTagName("ns2:Workflow");
-
         //TASK AREA
-        NodeList nTask = document.getElementsByTagName("ns2:Task");
+            // create a list of xml nodes
+        NodeList nTask = document.getElementsByTagName("cdm:Attribute");
         for (int i = 0; i < nTask.getLength(); i++) {
+            //iterate through each node from the nodelist
             Node nNTask = nTask.item(i);
-            System.out.println("\nCurrent Element: " + nNTask.getNodeName());
+            //System.out.println("\nCurrent Element: " + nNTask.getNodeName());
+            //checking if the nodeType is an element node (the actual status)
             if (nNTask.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElementTask = (Element) nNTask;
-
-                //find the status: E
-                if (eElementTask.getElementsByTagName("ns2:status")
-                        .item(0)
-                        .getTextContent().equalsIgnoreCase("e")){
-                    System.out.println("aici am gasit un eronat --- E --- ");
-
+                //if matches any number
+                String content = eElementTask.getElementsByTagName("cdm:value").item(0).getTextContent();
+//                String regex = "[0-9]+";
+//                or
+//                String regex = "\\d+";
+                if (content.matches("[0-9]+")){
+                    System.out.println("Numarul vechi care trebuie inlocuit: " + content);
                     //set the status from E to I (initiate)
-                    eElementTask.getElementsByTagName("ns2:status").item(0).setTextContent("I");
+                    eElementTask.getElementsByTagName("cdm:value").item(0).setTextContent(newNumber);
 //                    eElementTask.getElementsByTagName("ns2:status").item(0).setNodeValue("I");
-                    System.out.println("Status schimbat este: " +
-                            eElementTask.getElementsByTagName("ns2:status")
+                    System.out.println("Numarul schimbat este: " +
+                            eElementTask.getElementsByTagName("cdm:value")
                                     .item(0)
                                     .getTextContent());
-
                     // writing the content into xml file
                     TransformerFactory factory = TransformerFactory.newInstance();
                     Transformer transformer = factory.newTransformer();
                     DOMSource source = new DOMSource(document);
                     StreamResult result = new StreamResult(new File(String.valueOf(newXmlFile)));
                     transformer.transform(source, result);
-
-//                    Field[] reflectedClass = TransformerFactory.class.getDeclaredFields();
-//                    for (Field field : reflectedClass) {
-//                        int mod = field.getModifiers();
-//                        System.out.println(mod);
-//                    }
                     System.out.println("Done");
+                    }
                 }
-
-//                eElementTask.getElementsByTagName("ns2:name").item(0).setTextContent("schimbat by tao");
-//                System.out.println("Task Name: " +
-//                        eElementTask.getElementsByTagName("ns2:name")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Processor: " +
-//                        eElementTask.getElementsByTagName("ns2:taskProcessor")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Status initial: " +
-//                        eElementTask.getElementsByTagName("ns2:status")
-//                                .item(0)
-//                                .getTextContent());//setTextContent to edit
             }
         }
-
-        //WORKFLOW AREA
-//        System.out.println("---------------------------");
-//        for (int temp = 0; temp < nList.getLength(); temp++){
-//                Node nNode = nList.item(temp);
-//
-//                System.out.println("\nCurrent Element: " + nNode.getNodeName());
-//
-//            if (nNode.getNodeType() == Node.ELEMENT_NODE){
-//                Element eElement = (Element) nNode;
-//
-//                System.out.println("Service\\Task type: " +
-//                        eElement.getElementsByTagName("ns2:name")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Status is: " +
-//                        eElement.getElementsByTagName("ns2:status")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Rollback status: " +
-//                        eElement.getElementsByTagName("ns2:rollback")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Cancelation status: " +
-//                        eElement.getElementsByTagName("ns2:cancellationMilestone")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Critical status: " +
-//                        eElement.getElementsByTagName("ns2:critical")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Created: " +
-//                        eElement.getElementsByTagName("ns2:createdDate")
-//                                .item(0)
-//                                .getTextContent());
-//                System.out.println("Modified: " +
-//                        eElement.getElementsByTagName("ns2:modifiedDate")
-//                                .item(0)
-//                                .getTextContent());//setTextContent to edit
-//            }
-        }
-        catch (ParserConfigurationException e){
-        e.printStackTrace();
+        catch (ParserConfigurationException e) {
+        e.printStackTrace(); }
         }
     }
-//        NodeList generatedId = document.getElementsByTagName("ns2:generatedBy");
-//        Node iDnode = generatedId.item(0);
-//        System.out.println("\n" + "Generated by instanceID: " +
-//                iDnode.getTextContent());
-    }
-//}
