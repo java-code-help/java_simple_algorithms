@@ -1,33 +1,32 @@
 package com.company;
 
 public class Counter{
-
-    long count = 0;
-
-    public synchronized void add(long value){
-        this.count += value;
+    long count;
+    synchronized void add(){
+        count++;
     }
 }
  class CounterThread extends Thread{
-    protected Counter counter = null;
-    public CounterThread(Counter counter){
+    Counter counter = null;
+    CounterThread(Counter counter){
         this.counter = counter;
     }
-    public void run() {
+
+    public synchronized void run() {
         for(int i=0; i<10; i++){
-            counter.add(i);
+            counter.add();
             System.out.println(i);
         }
     }
-}
-class Example {
 
-    public static void main(String[] args){
-        Counter counter = new Counter();
-        Thread  threadA = new CounterThread(counter);
-        Thread  threadB = new CounterThread(counter);
+     public static void main(String[] args) {
+         Counter counterA = new Counter();
+         Counter counterB = new Counter();
 
-        threadA.start();
-        threadB.start();
-    }
+         Thread threadA = new CounterThread(counterA);
+         Thread threadB = new CounterThread(counterB);
+
+         threadA.start();
+         threadB.start();
+     }
 }
