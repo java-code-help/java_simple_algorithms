@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 //TO-DO:
 //add comments
+//Character.isLetter(string.charAt(index))
 public class CleanCode {
     private boolean StringToChars(String param) {
         Scanner sc = new Scanner(System.in);
