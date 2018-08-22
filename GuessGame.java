@@ -4,8 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-//TO-DO:
-//add comments
+//To do: add comments
 //Character.isLetter(string.charAt(index))
 public class CleanCode {
     private boolean StringToChars(String param) {
@@ -36,6 +35,7 @@ public class CleanCode {
                 System.out.print(" _ ");
                 missingLetters[i] = chars[i];
                 found = false;
+//                System.out.println("> " + missingLetters[i] + " <");
             }
 
 
@@ -47,6 +47,9 @@ public class CleanCode {
 
 
         }
+//        for (char o: missingLetters){
+//            System.out.println(o);
+//        }
         System.out.print("missing letters: " + Arrays.toString(missingLetters));
         System.out.println("\nremained " + d + " letters unfound");
 //        System.out.println(Arrays.toString(chars));
