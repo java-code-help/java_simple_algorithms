@@ -3,6 +3,9 @@ package com.company;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+//TO-DO:
+//add comments
 public class CleanCode {
     private boolean StringToChars(String param) {
         Scanner sc = new Scanner(System.in);
