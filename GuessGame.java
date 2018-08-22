@@ -52,7 +52,9 @@ public class CleanCode {
 
     public static void main(String[] args) {
         CleanCode cleanCode = new CleanCode();
-        cleanCode.StringToChars("abcdefg");
+        String movieName = "Hidalgo";
+
+        cleanCode.StringToChars(movieName);
 
     }
 }
