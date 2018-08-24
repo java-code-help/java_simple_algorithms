@@ -3,7 +3,6 @@ package com.company;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 //To do: add comments
 //Character.isLetter(string.charAt(index))
 public class CleanCode {
@@ -26,8 +25,6 @@ public class CleanCode {
         System.out.println("each char: ");
         for (int i=0;i<chars.length;i++) {
             chars[i] = buffer[i];
-
-
             if(chars[i] == Cchars[i]) {
                 d--;
                 System.out.print(Cchars[i] + " ");
@@ -37,31 +34,28 @@ public class CleanCode {
                 found = false;
 //                System.out.println("> " + missingLetters[i] + " <");
             }
-
-
-
-            found = (d == 0) ? true : false;
-
-
+            found = (d == 0);
             if (found){System.out.println("100% found WOW!");}
-
-
         }
-//        for (char o: missingLetters){
-//            System.out.println(o);
-//        }
-        System.out.print("missing letters: " + Arrays.toString(missingLetters));
+
+        System.out.print("missing letters: " /*Arrays.toString(missingLetters)*/);
+        for(char x:missingLetters){
+            if (!Character.isLetter(x)){
+                System.out.print("_");
+            }else{
+                System.out.print(x + " ");
+            }
+        }
         System.out.println("\nremained " + d + " letters unfound");
 //        System.out.println(Arrays.toString(chars));
-
         return found;
     }
-
     public static void main(String[] args) {
         CleanCode cleanCode = new CleanCode();
         String movieName = "Hidalgo";
 
         cleanCode.StringToChars(movieName);
+        String x = movieName = "h";
 
     }
 }
