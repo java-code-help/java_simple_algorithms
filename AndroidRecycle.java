@@ -46,20 +46,15 @@ public class RecycleViewCode extends RecyclerView.Adapter<RecycleViewCode.CodeVi
             
             itemView.setOnClickListener(this);
         }
-        public void setData(Code current) {
-            this.myTextView.setText(current.getTitle());
-        }
 
         @Override
         public void onClick(View view) {
             if (mClickListener != null)
                 mClickListener.onItemClick(view, getAdapterPosition());
-        }
+       }
 
     }
-    String getItem(int id) {
-        return codeList.get(id);
-    }
+
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
