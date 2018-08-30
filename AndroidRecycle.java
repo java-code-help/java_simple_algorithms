@@ -1,3 +1,6 @@
+//for animator
+https://github.com/willowtreeapps/spruce-android/blob/master/app/src/main/java/com/willowtreeapps/spurceexampleapp/fragments/RecyclerFragment.java
+
 package com.example.taolen.javarecipes;
 
 import android.content.Context;
