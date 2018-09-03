@@ -1,8 +1,6 @@
-#option 1
+// #option 1
 public class AwesomeButtonActivity extends AppCompatActivity {
-
     private Button awesomeButton;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,40 +13,32 @@ public class AwesomeButtonActivity extends AppCompatActivity {
             }
         });
     }
-
     private void awesomeButtonClicked() {
         awesomeButton.setText("AWESOME!");
     }
 }
-#option 2
+// #option 2
 public class AwesomeButtonActivity extends AppCompatActivity {
-
-    private Button awesomeButton;
-    
+    private Button awesomeButton; 
     private View.OnClickListener awesomeOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             awesomeButtonClicked();
         }
     };
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         awesomeButton = new Button(this);
-
         awesomeButton.setOnClickListener(awesomeOnClickListener);
     }
-
     private void awesomeButtonClicked() {
         awesomeButton.setText("AWESOME!");
     }
 }
-#option 3
+// #option 3
 public class AwesomeButtonActivity extends AppCompatActivity {
-
     private Button awesomeButton;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +46,9 @@ public class AwesomeButtonActivity extends AppCompatActivity {
 
         awesomeButton.setOnClickListener(new AwesomeButtonClick());
     }
-
     private void awesomeButtonClicked() {
         awesomeButton.setText("AWESOME!");
     }
-    
     class AwesomeButtonClick implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -68,11 +56,9 @@ public class AwesomeButtonActivity extends AppCompatActivity {
         }
     }
 }
-#option 4
+// #option 4
 public class AwesomeButtonActivity extends AppCompatActivity implements View.OnClickListener {
-
     private Button awesomeButton;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,14 +66,11 @@ public class AwesomeButtonActivity extends AppCompatActivity implements View.OnC
 
         awesomeButton.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         awesomeButtonClicked();
     }
-
     private void awesomeButtonClicked() {
         awesomeButton.setText("AWESOME!");
     }
-    
 }
