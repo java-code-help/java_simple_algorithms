@@ -74,3 +74,4 @@ public class AwesomeButtonActivity extends AppCompatActivity implements View.OnC
         awesomeButton.setText("AWESOME!");
     }
 }
+// ref: https://hackernoon.com/4-ways-to-implement-onclicklistener-on-android-9b956cbd2928
