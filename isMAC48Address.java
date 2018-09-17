@@ -30,3 +30,11 @@ static boolean isMac48(String input){
         }
         return condition;
     }
+
+
+//smaller
+boolean isMAC48Address(String inputString) {
+     Pattern p = Pattern.compile("^([0-9a-fA-F]{2}[-]){5}([0-9a-fA-F]{2})$");
+     Matcher m = p.matcher(inputString);
+     return m.matches();
+}
