@@ -17,19 +17,28 @@ public static int countChar(String str, char ch){
        }
     }
 //counter EACH char
-static String lineEncoding(String s) {
-        s += "#";
-        int cnt = 1;
+static String lineEncoding(String string) {
+        //adding non-char character to make the length of the string + 1
+        string += "#";
+        int counter = 1;
         StringBuilder result = new StringBuilder();
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) == s.charAt(i - 1)) {
-                cnt++;
+        //iterating from 1 to length of the string
+        for (int i = 1; i < string.length(); i++) {
+            //compare char from index 1 to index 0
+            if (string.charAt(i) == string.charAt(i - 1)) {
+                //if true add 1 to counter
+                counter++;
+                //after finishing with counter the same letter we add
+                //the letter to stringbuilder like this: 3a
             } else {
-                if (cnt > 1) {
-                    result.append(cnt);
+                if (counter > 1) {
+                    //append counter first
+                    result.append(counter);
                 }
-                result.append(s.charAt(i-1));
-                cnt=1;
+                //append letter
+                result.append(string.charAt(i-1));
+                //reset counter
+                counter=1;
             }
         }
         return result.toString();
