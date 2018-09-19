@@ -45,7 +45,25 @@ String s = "";
     return s;
 }
 
+//go
 
+func rome(n int) (o string) {
+    M := "IVXLCDM "
+    for n>0 {
+        t := n%10
+        s := M[:t%5/4]
+        n /= 10
+        for t>0 {
+            t++
+            k := t/5
+            s += M[k:k+1]
+            t -= k*4 + 2
+        }
+        o = s + o
+        M = M[2:]
+    }
+    return
+}
 //js
 rome = n =>  {
     c = 'IVXLCDM'
