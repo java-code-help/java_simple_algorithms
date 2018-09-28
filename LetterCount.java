@@ -16,6 +16,9 @@ public class Main {
                 if (lett >= 'A' && lett <= 'Z'){
                     //for each index from letterCount array
                     //we add one to it when the letter occurs
+                    //for example if letter is 'A' then we substract 'A'
+                    //in order to add one to letter 'A' which will be index 0
+                    //for 'B' we substract 'A' to go in index 1 and add in that index
                     letterCount[lett - 'A']++;
                 }
             }
