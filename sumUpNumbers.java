@@ -1,9 +1,9 @@
 private static int sumUpNumbers(String inputString) {
-        int cost = 0;
+        int count = 0;
         Pattern p = Pattern.compile("-?\\d+");
         Matcher m = p.matcher(inputString);
         while (m.find()) {
-            cost+=Integer.parseInt(m.group());
+            count+=Integer.parseInt(m.group());
             System.out.println(m.group());
         }
         
@@ -14,7 +14,15 @@ private static int sumUpNumbers(String inputString) {
 //             if (num.length()>0) count+=Integer.parseInt(num);
 //         }
 //         return count;
+        
+        //variant #3
+//      int count=0;
+//      Matcher m = Pattern.compile("\\d+").matcher(inputString);
+//      while (m.find()) {
+//             count+=Integer.parseInt(m.group());
+//         }
+//     return count;
 
-        System.out.println(cost);
-        return cost;
+        System.out.println(count);
+        return count;
     }
