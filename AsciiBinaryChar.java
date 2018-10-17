@@ -87,3 +87,18 @@ char Z = (char)Integer.valueOf("01011010", 2).intValue();
 // 122	7A	01111010	z
 
 //info here: https://www.asciitable.com/
+
+
+
+//messageFromBinaryCode
+String messageFromBinaryCode(String code) {
+    String s2 = "";   
+    char nextChar;
+
+    for(int i = 0; i <= code.length()-8; i += 8) 
+    {
+         nextChar = (char)Integer.parseInt(code.substring(i, i+8), 2);
+         s2 += nextChar;
+    }
+    return s2;
+}
