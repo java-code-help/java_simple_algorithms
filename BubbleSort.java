@@ -4,9 +4,11 @@ import java.util.Arrays;
 
 public class BubbleSort  {
     public static int[] bubbleSort(int arr[]) {
-        //from 0 index to end of index
+        //from the first digit to the last digit from the array
         for (int i = 0; i < arr.length; i++) {
-            //comparing all digits
+            //comparing all digits x times length of the array - 1
+            //because we have to get rid of the actual digit that 
+            //we are comparing with other digits
             for (int j = 0; j < arr.length-1; j++) {
                 //if statement is true we swap digits
                 if(arr[j]>arr[j+1]) {
@@ -17,9 +19,5 @@ public class BubbleSort  {
             }
         }
         return arr;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(bubbleSort(new int[]{100, 74, 29, 90})));
     }
 }
